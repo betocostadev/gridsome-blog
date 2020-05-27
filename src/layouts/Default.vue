@@ -3,16 +3,13 @@
     <div class="layout">
       <header class="header">
         <strong>
-          <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+          <g-link :class="navTheme" class="main__link" to="/">{{ $static.metadata.siteName.toUpperCase() }}</g-link>
         </strong>
         <nav class="nav">
-          <g-link class="nav__link" to="/">Home</g-link>
-          <g-link class="nav__link" to="/about/">About</g-link>
-          <span v-if="theme === 'dark-theme'" class="span-btn material-icons" @click="toggleTheme">
-            beach_access
-          </span>
-          <span v-else class="span-btn material-icons" @click="toggleTheme">
-            nights_stay
+          <g-link :class="navTheme" class="nav__link" to="/">HOME</g-link>
+          <g-link :class="navTheme" class="nav__link" to="/about/">ABOUT</g-link>
+          <span class="span-btn material-icons" role="button" aria-label="Change theme" title="Change theme" @click="toggleTheme">
+            {{ theme === 'dark-theme' ? 'beach_access' : 'nights_stay' }}
           </span>
         </nav>
       </header>
@@ -33,13 +30,23 @@ query {
 export default {
   data() {
     return {
-      theme: 'dark-theme'
+      theme: 'dark-theme',
+      navTheme: 'dark-nav-link'
     }
   },
+
   methods: {
     toggleTheme() {
       this.theme = this.theme === 'dark-theme' ? 'light-theme' : 'dark-theme'
+      this.navTheme = this.navTheme === 'dark-nav-link' ? 'light-nav-link' : 'dark-nav-link'
+      localStorage.setItem('theme', this.theme)
+      localStorage.setItem('navTheme', this.navTheme)
     }
+  },
+
+  created () {
+    this.theme = localStorage.getItem('theme') || 'dark-theme'
+    this.navTheme = localStorage.getItem('navTheme') || 'dark-nav-link'
   },
 }
 </script>

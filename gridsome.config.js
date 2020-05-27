@@ -6,5 +6,5 @@
 
 module.exports = {
   siteName: 'Learnwithbeto',
-  plugins: []
+  plugins: [],
 }
