@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout theme-dark">
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
@@ -31,11 +31,16 @@ body {
   line-height: 1.5;
 }
 
+.theme-dark {
+  background: #232631;
+  color: whitesmoke;
+}
+
 .layout {
-  max-width: 900px;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 2% 20%;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .header {
