@@ -1,0 +1,45 @@
+body {
+  font-family: 'Montserrat', -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin:0;
+  padding:0;
+  line-height: 1.5;
+}
+
+.container {
+  margin:0;
+  padding:0;
+  min-height: 100vh;
+}
+
+.dark-theme {
+  background: darkslategray;
+  color: whitesmoke;
+}
+
+.light-theme {
+  background: whitesmoke;
+  color: darkslategray;
+}
+
+.layout {
+  max-width: 900px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 80px;
+}
+
+.nav__link {
+  margin-left: 20px;
+}
+
+.span-btn {
+  padding: 1rem;
+  cursor: pointer;
+}
