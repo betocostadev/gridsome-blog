@@ -6,14 +6,15 @@
           <g-link :class="navTheme" class="main__link" to="/">{{ $static.metadata.siteName.toUpperCase() }}</g-link>
         </strong>
         <nav class="nav">
-          <g-link :class="navTheme" class="nav__link" to="/">HOME</g-link>
+          <g-link :class="navTheme" class="nav__link" exact to="/">HOME</g-link>
           <g-link :class="navTheme" class="nav__link" to="/about/">ABOUT</g-link>
           <span class="span-btn material-icons" role="button" aria-label="Change theme" title="Change theme" @click="toggleTheme">
             {{ theme === 'dark-theme' ? 'beach_access' : 'nights_stay' }}
           </span>
         </nav>
       </header>
-      <slot/>
+      <slot :theme="theme" />
+      <Footer :theme="theme" />
     </div>
   </div>
 </template>
@@ -27,12 +28,17 @@ query {
 </static-query>
 
 <script>
+import Footer from '@/components/Footer'
 export default {
   data() {
     return {
       theme: 'dark-theme',
       navTheme: 'dark-nav-link'
     }
+  },
+
+  components: {
+    Footer,
   },
 
   methods: {

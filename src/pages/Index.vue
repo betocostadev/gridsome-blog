@@ -21,7 +21,13 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Learn with Beto',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'author', content: 'Beto Costa'},
+      { name: 'description', content: 'Learn about Computer Science' },
+      { name: 'keywords', content: 'CS, Computer science, Vue, Vue.js, Gridsome, Front-end, Frontend, Back-end, Backend, JavaScript, Python, GraphQL, Blog, Beto Costa, Github, Web Development' }
+    ]
   }
 }
 </script>

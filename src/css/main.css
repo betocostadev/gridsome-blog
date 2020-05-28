@@ -37,6 +37,7 @@ body {
 }
 
 .main__link {
+  letter-spacing: 0.5rem;
   text-decoration: none;
   font-weight: 700;
 }
@@ -47,18 +48,27 @@ body {
 .nav__link {
   margin-left: 20px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
 }
 
-.nav__link:hover {
+.nav__link:hover, .page-link:hover {
   text-decoration: underline;
 }
 
-.light-nav-link {
+.page-link {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.active {
+  font-weight: 700;
+}
+
+.light-nav-link, .light-page-link {
   color: #1a8765;
 }
 
-.dark-nav-link {
+.dark-nav-link, .dark-page-link {
   color: #5cd3a1;
 }
 

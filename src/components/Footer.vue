@@ -1,0 +1,30 @@
+<template>
+  <footer>Copyright {{ getCurrentYear }} by <a :class="theme === 'dark-theme' ? 'light-page-link' : 'dark-page-link'" :href="githubProfile" class="page-link"  target="_blank" rel="noopener noreferrer">Beto Costa</a></footer>
+
+</template>
+
+<script>
+export default {
+    props: ['theme'],
+
+    data() {
+        return {
+            githubProfile: 'https://github.com/betocostadev',
+            // pageLinkTheme: 'dark-page-link'
+        }
+    },
+
+    computed: {
+        getCurrentYear() {
+            return new Date().getFullYear()
+        }
+    },
+
+}
+</script>
+
+<style>
+footer {
+    margin-top: 2rem;
+}
+</style>
