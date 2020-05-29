@@ -10,18 +10,11 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Post',
-        path: './content/posts/**/*.md',
-        // route: './content/posts/:slug'
-      }
+        baseDir: "./content/posts",
+        path: "*.md",
+        typeName: "Post",
+        route: "/posts/:title",
+      },
     }
   ],
-  templates: {
-    Post: [
-      {
-        path: '/blog/:title',
-        component: './src/templates/Blog.vue'
-      }
-    ]
-  }
 }
