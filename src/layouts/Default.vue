@@ -7,6 +7,7 @@
         </strong>
         <nav class="nav">
           <g-link class="nav__link" exact to="/">HOME</g-link>
+          <g-link class="nav__link" to="/blog">BLOG</g-link>
           <g-link class="nav__link" to="/about/">ABOUT</g-link>
           <span class="span-btn material-icons" role="button" aria-label="Change theme" title="Change theme" @click="toggleTheme">
             {{ theme === 'dark-theme' ? 'beach_access' : 'nights_stay' }}

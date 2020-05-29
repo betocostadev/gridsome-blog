@@ -6,5 +6,22 @@
 
 module.exports = {
   siteName: 'Learn with Beto',
-  plugins: [],
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Post',
+        path: './content/posts/**/*.md',
+        // route: './content/posts/:slug'
+      }
+    }
+  ],
+  templates: {
+    Post: [
+      {
+        path: '/blog/:title',
+        component: './src/templates/Blog.vue'
+      }
+    ]
+  }
 }
