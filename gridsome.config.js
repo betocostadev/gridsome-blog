@@ -13,8 +13,16 @@ module.exports = {
         baseDir: "./content/posts",
         path: "*.md",
         typeName: "Post",
-        route: "/posts/:title",
+        // route: "/posts/:title",
       },
     }
   ],
+  templates: {
+    Post: [
+      {
+        path: '/blog/:title',
+        component: './src/templates/Post.vue'
+      }
+    ]
+  }
 }
