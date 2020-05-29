@@ -1,12 +1,10 @@
 <template>
-  <footer>Copyright {{ getCurrentYear }} by <a :class="theme === 'dark-theme' ? 'light-page-link' : 'dark-page-link'" :href="githubProfile" class="page-link"  target="_blank" rel="noopener noreferrer">Beto Costa</a></footer>
+  <footer>Copyright {{ getCurrentYear }} by <a :href="githubProfile" class="page-link"  target="_blank" rel="noopener noreferrer">Beto Costa</a></footer>
 
 </template>
 
 <script>
 export default {
-    props: ['theme'],
-
     data() {
         return {
             githubProfile: 'https://github.com/betocostadev',

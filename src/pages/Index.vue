@@ -23,10 +23,7 @@ export default {
   metaInfo: {
     title: 'Learn with Beto',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'author', content: 'Beto Costa'},
-      { name: 'description', content: 'Learn about Computer Science' },
-      { name: 'keywords', content: 'CS, Computer science, Vue, Vue.js, Gridsome, Front-end, Frontend, Back-end, Backend, JavaScript, Python, GraphQL, Blog, Beto Costa, Github, Web Development' }
+      { name: 'keywords', content: 'CS, CS50, EDX, edx, Udemy, Computer Science, Vue, Vue.js, Gridsome, Front-end, Frontend, Back-end, Backend, JavaScript, Python, GraphQL, Blog, Beto Costa, Github, Web Development' }
     ]
   }
 }
