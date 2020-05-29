@@ -13,7 +13,7 @@
           </span>
         </nav>
       </header>
-      <slot :theme="theme" />
+        <slot />
       <Footer :theme="theme" />
     </div>
   </div>

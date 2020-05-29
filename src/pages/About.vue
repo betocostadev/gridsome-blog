@@ -2,7 +2,7 @@
   <Layout ref="layout">
     <h1>About me</h1>
     <p>I'm Beto Costa, a Front-end developer currently working with Vue.</p>
-    <a :class="theme" class="page-link" href="https://betocostadev.github.io/" target="_blank" rel="noopener noreferrer">My Portfolio</a>
+    <a :class="navTheme" class="page-link" href="https://betocostadev.github.io/" target="_blank" rel="noopener noreferrer">My Portfolio</a>
   </Layout>
 </template>
 
@@ -14,23 +14,23 @@ export default {
 
   data() {
     return {
-      theme: 'dark-nav-link',
+      navTheme: 'dark-nav-link',
     }
   },
 
-  computed: {
+  methods: {
     togglePageLinkClass() {
       if (this.$refs.layout.theme === 'dark-theme') {
-        this.theme = 'light-nav-link'
+        this.navTheme = 'light-nav-link'
       }
       else {
-        this.theme = 'dark-nav-link'
+        this.navTheme = 'dark-nav-link'
       }
     }
   },
   mounted () {
-    console.log(this.$refs.layout.theme)
-    console.log(this.theme);
+    this.togglePageLinkClass()
+    // console.log(this.$refs.layout.theme)
   },
 }
 </script>
