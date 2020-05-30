@@ -15,10 +15,9 @@
       <g-link class="post-link" :to="edge.node.path">{{ edge.node.title }}</g-link>
       <p>{{ edge.node.excerpt }}</p>
       <p>Posted on {{ edge.node.date }}. Time to read {{ edge.node.timeToRead }} minutes.</p>
+      <div v-html="edge.node.excerpt"></div>
       <span style="padding-right: 2rem;" v-for="tag in edge.node.tags" :key="tag">
-        #{{ tag }}
-      </span>
-      <!-- <div v-html="edge.node.excerpt"></div> -->
+      <g-image style="width: 22px;" alt="icon" :src="getIcon(tag)" />{{ tag }}</span>
     </article>
   </Layout>
 </template>
@@ -50,7 +49,48 @@
 
 <script>
 export default {
+  methods: {
 
+    getIcon(tag) {
+      switch (tag) {
+        case 'vue':
+          return './icons/vue.svg'
+          break;
+        case 'gridsome':
+          return './icons/gridsome.svg'
+          break
+        case 'markdown':
+          return './icons/markdown.svg'
+          break
+        case 'computer science':
+          return './icons/computer-science.svg'
+          break
+        case 'graphql':
+          return './icons/graphql.svg'
+          break
+        case 'blog':
+          return './icons/blog.svg'
+          break
+        case 'lecture':
+          return './icons/lecture.svg'
+          break
+        case 'note':
+          return './icons/note.svg'
+          break
+        case 'database':
+          return './icons/db.svg'
+          break
+        case 'python':
+          return './icons/python.svg'
+          break
+        case 'github':
+          return './icons/github.svg'
+          break
+        default:
+          break;
+      }
+    }
+  },
 }
 </script>
 

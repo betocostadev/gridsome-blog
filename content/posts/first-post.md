@@ -2,7 +2,7 @@
 title: "First Post"
 excerpt: "This is the first post of my blog created using Gridsome"
 date: 2020-05-29
-tags: ['Vue.js', 'vue', 'gridsome', 'markdown', 'blog']
+tags: ['vue', 'gridsome', 'markdown', 'graphql', 'computer science', 'blog', 'lecture', 'note', 'database', 'python', 'github']
 cover_image: './images/road_into_mountains-Bruno-Bergher.jpg'
 cover_image_alt: 'Long road into the mountains'
 photographer: 'Bruno Bergher'

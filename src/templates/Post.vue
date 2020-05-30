@@ -17,6 +17,14 @@ query($path: String!) {
 
 <script>
 export default {
+  methods: {
+    getTitle() {
+      console.log(this.$page.post.title)
+    }
+  },
+  created () {
+    this.getTitle()
+  },
 
 }
 </script>
