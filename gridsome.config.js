@@ -13,7 +13,16 @@ module.exports = {
         baseDir: "./content/posts",
         path: "*.md",
         typeName: "Post",
-        // route: "/posts/:title",
+        refs: {
+          // Reference to existing authors by id.
+          // author: 'Author',
+          // Create a Tag content type and its nodes automatically.
+          tags: {
+            typeName: 'Tag',
+            // route: '/tags/:id',
+            create: true
+          }
+        }
       },
     }
   ],
@@ -22,6 +31,12 @@ module.exports = {
       {
         path: '/blog/:title',
         component: './src/templates/Post.vue'
+      }
+    ],
+    Tag: [
+      {
+        path: '/blog/tags/:id',
+        component: './src/templates/Tag.vue'
       }
     ]
   }

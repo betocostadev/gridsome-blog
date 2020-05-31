@@ -15,9 +15,13 @@
       <g-link class="post-link" :to="edge.node.path">{{ edge.node.title }}</g-link>
       <p>{{ edge.node.excerpt }}</p>
       <p>Posted on {{ edge.node.date }}. Time to read {{ edge.node.timeToRead }} minutes.</p>
-      <div v-html="edge.node.excerpt"></div>
-      <span style="padding-right: 2rem;" v-for="tag in edge.node.tags" :key="tag">
-      <g-image style="width: 22px;" alt="icon" :src="getIcon(tag)" />{{ tag }}</span>
+      <div class="tag-container">
+        <div class="tag-item" v-for="tag in edge.node.tags" :key="tag.id">
+          <g-link style="padding-right: 2rem;" :to="tag.path">
+            <g-image style="height: 20px; width: 20px; background: white; border-radius: 50%; padding: 6px;" alt="icon" :src="getIcon(tag.id)" />{{tag.id}}</g-link>
+        </div>
+
+      </div>
     </article>
   </Layout>
 </template>
@@ -31,7 +35,10 @@
         id
         path
         date (format: "MMMM Do, YYYY")
-        tags
+        tags {
+          id
+          path
+        }
         timeToRead
         excerpt
         title
@@ -56,8 +63,20 @@ export default {
         case 'vue':
           return './icons/vue.svg'
           break;
+        case 'react':
+          return './icons/react.svg'
+          break;
+        case 'apollo':
+          return './icons/apollostack.svg'
+          break;
         case 'gridsome':
           return './icons/gridsome.svg'
+          break
+        case 'typescript':
+          return './icons/typescropt-icon.svg'
+          break
+        case 'python':
+          return './icons/python.svg'
           break
         case 'markdown':
           return './icons/markdown.svg'
@@ -75,13 +94,10 @@ export default {
           return './icons/lecture.svg'
           break
         case 'note':
-          return './icons/note.svg'
+          return './icons/lecture.svg'
           break
         case 'database':
           return './icons/db.svg'
-          break
-        case 'python':
-          return './icons/python.svg'
           break
         case 'github':
           return './icons/github.svg'
